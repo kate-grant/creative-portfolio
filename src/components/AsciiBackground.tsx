@@ -84,7 +84,7 @@ class SimplexNoise1 {
     for (let i = 0; i < 256; i++) p[i] = i;
     for (let i = 255; i > 0; i--) {
       const n = Math.floor(Math.random() * (i + 1));
-      const tmp = p[i];
+      const tmp: number = p[i];
       p[i] = p[n];
       p[n] = tmp;
     }
@@ -241,7 +241,7 @@ class SimplexNoise2 {
     for (let i = 0; i < 256; i++) p[i] = i;
     for (let i = 255; i > 0; i--) {
       const n = Math.floor(Math.random() * (i + 1));
-      const tmp = p[i];
+      const tmp: number = p[i];
       p[i] = p[n];
       p[n] = tmp;
     }

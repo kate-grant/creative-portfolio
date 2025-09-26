@@ -44,10 +44,9 @@ const ScrollSections: React.FC = () => {
           <img
             src={yami}
             style={{
-              maxWidth: "40%",
-              height: "auto",
-              objectFit: "cover",
-              borderRadius: "20%",
+              maxWidth: "30%",
+              height: "50%",
+              borderRadius: "12px",
             }}
           />
           <div
@@ -58,7 +57,7 @@ const ScrollSections: React.FC = () => {
             }}
           >
             <h3 style={{ textAlign: "left" }}>YouAreAmI</h3>
-            <p style={{ textAlign: "left", fontSize: "2rem" }}>
+            <p style={{ textAlign: "left", fontSize: "1.7rem" }}>
               YouAreAmI is a multi-player MIDI synthesizer that uses proximity
               and sentiment ML analysis to control Web Audio. By exploring the
               concept of shared space and the emotions that arise from sharing
@@ -68,6 +67,18 @@ const ScrollSections: React.FC = () => {
               space, while amplifying the complexity of emotions that arise in
               shared spaces.
             </p>
+            <a
+              href="https://youareami.onrender.com/"
+              target="_blank"
+              style={{
+                textAlign: "left",
+                fontSize: "2em",
+                textDecoration: "underline",
+                textDecorationStyle: "wavy",
+              }}
+            >
+              Visit
+            </a>
           </div>
         </div>
       </ScrollScene>
