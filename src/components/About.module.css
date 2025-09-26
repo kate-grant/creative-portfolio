@@ -1,0 +1,30 @@
+/* src/components/AboutSection.css */
+.about-container {
+  padding: 100px 20px;
+  background-color: #f7f6f4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  max-width: 800px;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.about-content h2 {
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.about-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #000000;
+  margin-bottom: 24px;
+}
