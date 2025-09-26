@@ -10,9 +10,12 @@ const fixedStyle: CSSProperties = {
   fontSize: "2.5rem",
   fontWeight: "bold",
   fontFamily: "sans-serif",
-  color: "#000",
   zIndex: 20,
   userSelect: "none",
+  padding: "0 2em",
+  borderRadius: "500px",
+  backgroundColor: "#000",
+  color: "#fdffbf",
 };
 
 const ScrollShellApp: React.FC = () => {
