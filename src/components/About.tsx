@@ -5,7 +5,7 @@ import React from "react";
 import "./About.module.css";
 
 const paragraphs = [
-  `I am a poet and interdisciplinary artists from Brooklyn. My work explores the quiet geometries of a path shaped by city light and porous façades. I hold a B.A. in Music,  channeling a subtle rhythm that hums beneath my prose and language shaped like melody.`,
+  `I am a poet and interdisciplinary artist from Brooklyn. My work explores the quiet geometries of a path shaped by city light and porous façades. I hold a B.A. in Music,  channeling a subtle rhythm that hums beneath my prose and language shaped like melody.`,
   `My creative path moves between the written word, the visual, and the sonic, always chasing resonance over rules.`,
   `Whether sculpting stanzas, crafting visual experiences, or composing textures of sound, I seek moments that trace the intersections of technology, creativity, and the quiet architectures of memory.`,
   `Art, for me, is not a medium but a meeting place. My background in music taught me to listen deeply. Now, I build experiences that echo the environments that shape us.`,
