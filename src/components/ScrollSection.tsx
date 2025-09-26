@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AnimatedSVGsContainer from "./AnimatedSVGsContainer";
 import ScrollScene from "./ScrollScene";
 import Carousel from "./Carousel";
@@ -14,6 +14,16 @@ import About from "./About";
 const images = [b1, b2, b3, b4, b5, b6];
 
 const ScrollSections: React.FC = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    function onResize() {
+      setIsMobile(window.innerWidth <= 767);
+    }
+    window.addEventListener("resize", onResize);
+    onResize();
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
   return (
     <>
       <ScrollScene id="home">
@@ -37,14 +47,15 @@ const ScrollSections: React.FC = () => {
             maxWidth: "90vw",
             margin: "0 auto",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: isMobile ? "column" : "row",
             gap: "12px",
+            alignItems: "center",
           }}
         >
           <img
             src={yami}
             style={{
-              maxWidth: "30%",
+              maxWidth: isMobile ? "80%" : "30%",
               height: "50%",
               borderRadius: "12px",
             }}
@@ -56,8 +67,15 @@ const ScrollSections: React.FC = () => {
               flexDirection: "column",
             }}
           >
-            <h3 style={{ textAlign: "left" }}>YouAreAmI</h3>
-            <p style={{ textAlign: "left", fontSize: "1.7rem" }}>
+            <h3 style={{ textAlign: isMobile ? "center" : "left" }}>
+              YouAreAmI
+            </h3>
+            <p
+              style={{
+                textAlign: isMobile ? "center" : "left",
+                fontSize: isMobile ? "1rem" : "1.7rem",
+              }}
+            >
               YouAreAmI is a multi-player MIDI synthesizer that uses proximity
               and sentiment ML analysis to control Web Audio. By exploring the
               concept of shared space and the emotions that arise from sharing
@@ -71,7 +89,7 @@ const ScrollSections: React.FC = () => {
               href="https://youareami.onrender.com/"
               target="_blank"
               style={{
-                textAlign: "left",
+                textAlign: isMobile ? "center" : "left",
                 fontSize: "2em",
                 textDecoration: "underline",
                 textDecorationStyle: "wavy",

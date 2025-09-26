@@ -43,18 +43,6 @@ type ShapeNode = {
 };
 
 const shapes: ShapeTemplate[] = [
-  // {
-  //   type: "custom",
-  //   text: "",
-  //   id: "porcelain-blue",
-  //   image: `${import.meta.env.BASE_URL}/images/porcelain-blue.svg`,
-  //   x: 1400,
-  //   vx: 0.008,
-  //   vy: 0.005,
-  //   angularVelocity: 4.6,
-  //   targetX: 1250,
-  //   targetY: 390,
-  // },
   {
     type: "pill",
     text: "Poet",
@@ -79,23 +67,42 @@ const shapes: ShapeTemplate[] = [
   },
   {
     type: "pill",
-    text: "Interdisciplinary Artist",
-    id: "artist",
-    x: 950,
+    text: "Interdisciplinary",
+    id: "inter",
+    x: 1000,
     vx: 0.001,
     vy: 0.035,
     angularVelocity: 4.05,
     targetX: 300,
-    targetY: 750,
+    targetY: 700,
+  },
+  {
+    type: "pill",
+    text: "Artist",
+    id: "artist",
+    x: 1200,
+    vx: 0.001,
+    vy: 0.035,
+    angularVelocity: 4.05,
+    targetX: 500,
+    targetY: 850,
   },
 ];
-
-const SCALE = 3;
 
 const AnimatedSVGsContainer: React.FC = () => {
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
+    const getScale = () => {
+      const width = window.innerWidth;
+      if (width < 400) return 1.2;
+      if (width < 600) return 1.5;
+      if (width < 900) return 2;
+      return 3;
+    };
+
+    const SCALE = getScale();
+
     const width = window.innerWidth;
     const height = window.innerHeight;
     const expandedWidth = width * 1.1;

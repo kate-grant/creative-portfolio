@@ -9,6 +9,17 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    function onResize() {
+      setIsMobile(window.innerWidth <= 767);
+    }
+    window.addEventListener("resize", onResize);
+    onResize();
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   // Close modal on Esc key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -36,6 +47,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
       <div
         style={{
           display: "flex",
+          flexDirection: isMobile ? "column" : "row",
           gap: 16,
           padding: 16,
           overflowX: "auto",
@@ -47,8 +59,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
           <div
             key={idx}
             style={{
-              flex: "0 0 calc((100% / 3) - 16px)",
-              scrollSnapAlign: "center",
+              flex: isMobile ? "none" : "0 0 calc((100% / 3) - 16px)",
+              width: isMobile ? "100%" : undefined,
               borderRadius: 12,
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               overflow: "hidden",
@@ -75,8 +87,6 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
           </div>
         ))}
       </div>
-
-      {/* Modal Overlay */}
       {modalOpen && currentIndex !== null && (
         <div
           onClick={closeModal}
@@ -100,7 +110,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
           <img
             src={images[currentIndex]}
             alt={altTexts[currentIndex] || `modal-image-${currentIndex}`}
-            onClick={(e) => e.stopPropagation()} // Prevent modal close when clicking image
+            onClick={(e) => e.stopPropagation()}
             style={{
               maxWidth: "90vw",
               maxHeight: "90vh",
@@ -110,7 +120,6 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
               userSelect: "none",
             }}
           />
-          {/* Close button */}
           <button
             onClick={closeModal}
             aria-label="Close modal"
