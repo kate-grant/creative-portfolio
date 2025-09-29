@@ -172,7 +172,7 @@ const AnimatedSVGsContainer: React.FC = () => {
 
           g.filter((d) => d.type === "pill")
             .append("rect")
-            .attr("fill", "#fdffbf")
+            .attr("fill", "#828282")
             .attr("rx", pillCornerRadius)
             .attr("ry", pillCornerRadius);
 
@@ -181,7 +181,7 @@ const AnimatedSVGsContainer: React.FC = () => {
             .attr("text-anchor", "middle")
             .attr("dy", "0.35em")
             .attr("font-size", `${fontSize}px`)
-            .attr("fill", "#000");
+            .attr("fill", "#fdffbf");
 
           // SVG image shape here
           g.filter((d) => d.type === "custom")

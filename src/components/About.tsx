@@ -19,7 +19,7 @@ const About = () => {
       style={{ paddingTop: window.innerHeight < 750 ? "80vh" : 0 }}
     >
       <div className="about-content">
-        <h2>About Me</h2>
+        <h2>About</h2>
         {paragraphs.map((text, index) => (
           <AnimatedParagraph key={index} delay={index * 0.2}>
             {text}
