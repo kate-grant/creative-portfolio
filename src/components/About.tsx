@@ -13,7 +13,11 @@ const paragraphs = [
 
 const About = () => {
   return (
-    <section className="about-container" id="about">
+    <section
+      className="about-container"
+      id="about"
+      style={{ paddingTop: window.innerHeight < 750 ? "80vh" : 0 }}
+    >
       <div className="about-content">
         <h2>About Me</h2>
         {paragraphs.map((text, index) => (

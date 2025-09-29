@@ -80,11 +80,11 @@ const shapes: ShapeTemplate[] = [
     type: "pill",
     text: "Artist",
     id: "artist",
-    x: 1200,
+    x: 700,
     vx: 0.001,
     vy: 0.035,
     angularVelocity: 4.05,
-    targetX: 500,
+    targetX: 300,
     targetY: 850,
   },
 ];

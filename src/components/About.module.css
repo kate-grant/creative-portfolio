@@ -8,6 +8,18 @@
   justify-content: center;
 }
 
+@media (max-height: 750px) {
+  .about-container {
+    padding: 100px 20px;
+    background-color: #f7f6f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20vh;
+  }
+}
+
 .about-content {
   max-width: 800px;
   background: #ffffff;

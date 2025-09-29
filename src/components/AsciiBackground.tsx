@@ -45,7 +45,7 @@ const HomeBackground: React.FC = () => {
           const charIndex = Math.floor(normalized * (asciiChars.length - 1));
           const char = asciiChars[charIndex];
 
-          ctx.fillStyle = "#b0b0b0";
+          ctx.fillStyle = "#828282";
           ctx.fillText(char, x, y);
         }
       }
@@ -201,7 +201,7 @@ const InfoBackground1: React.FC = () => {
           );
           const char = asciiChars[charIndex];
 
-          ctx.fillStyle = "#b0b0b0";
+          ctx.fillStyle = "#828282";
           ctx.fillText(char, x, y);
         }
       }
@@ -370,7 +370,7 @@ const InfoBackground2: React.FC = () => {
 
           const char = asciiChars[charIndex];
 
-          ctx.fillStyle = "#b0b0b0";
+          ctx.fillStyle = "#828282";
           ctx.fillText(char, x, y);
         }
       }
