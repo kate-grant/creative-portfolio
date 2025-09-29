@@ -53,6 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, altTexts = [] }) => {
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           cursor: "pointer",
+          scrollbarWidth: "none",
         }}
       >
         {images.map((src, idx) => (

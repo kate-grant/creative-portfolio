@@ -7,7 +7,15 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     cursor: pointer;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
   }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
   .carousel-image {
     flex: 0 0 calc((100% - 32px) / 3);
     max-width: calc((100% - 32px) / 3);
@@ -17,6 +25,7 @@
     height: 300px;
     transition: transform 0.3s ease;
   }
+
   .carousel-image:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
